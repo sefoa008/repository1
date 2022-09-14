@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="no">
+   <head>
+      <title>Kalkulator</title>
+       <style>
+           body {
+            margin: auto;
+            width: 50%;
+            padding: 10px;
+            text-align: center;
+            background-color: beige;
+            margin: auto;
+            margin-top: 215px;
+           }
+           .flex-container {
+            display: flex;
+            justify-content: center;    
+           }
+       </style>
+   </head>
+   <body>
+       
+      <form id=idKalkulator name="calculator" class="flex-container">
+         <table>
+            <tr>
+               <td colspan="4">
+                  <input type="text" name="display" id="display">
+               </td>
+            </tr>
+            <tr>
+                <td><input type="button" class="operator" name="potens" value="√x" onclick="calculator.display.value += 'Math.sqrt('"></td>
+                <td><input type="button" value="(" onclick="calculator.display.value+='('"></td>
+                <td><input type="button" value=")" onclick="calculator.display.value+=')'"></td>
+                <td><input type="button" value="," onclick="calculator.display.value+='.'"></td>
+            </tr>
+            <tr>
+               <td><input type="button" name="syv" value="7" onclick="calculator.display.value += '7'"></td>
+               <td><input type="button" name="åtte" value="8" onclick="calculator.display.value += '8'"></td>
+               <td><input type="button" name="ni" value="9" onclick="calculator.display.value += '9'"></td>
+               <td><input type="button" class="operator" name="div" value="÷" onclick="calculator.display.value += '/'"></td>
+            </tr>
+            <tr>
+               <td><input type="button" name="fire" value="4" onclick="calculator.display.value += '4'"></td>
+               <td><input type="button" name="fem" value="5" onclick="calculator.display.value += '5'"></td>
+               <td><input type="button" name="seks" value="6" onclick="calculator.display.value += '6'"></td>
+               <td><input type="button" class="operator" name="multi" value="x" onclick="calculator.display.value += '*'"></td>
+            </tr>
+            <tr>
+               <td><input type="button" name="en" value="1" onclick="calculator.display.value += '1'"></td>
+               <td><input type="button" name="to" value="2" onclick="calculator.display.value += '2'"></td>
+               <td><input type="button" name="tre" value="3" onclick="calculator.display.value += '3'"></td>
+               <td><input type="button" class="operator" name="minus" value="-" onclick="calculator.display.value += '-'"></td>
+            </tr>
+            <tr>
+               <td><input type="button" id="clear" name="clear" value="C" onclick="calculator.display.value = ''"></td>
+               <td><input type="button" name="null" value="0" onclick="calculator.display.value += '0'"></td>
+               <td><input type="button" id="iderlik" name="er lik" value="=" onclick="calculator.display.value = eval(calculator.display.value)"></td>
+               <td><input type="button" class="operator" name="pluss" value="+" onclick="calculator.display.value += '+'"></td>
+            </tr>
+         </table>
+      </form>
+   </body>
+   <script>
+       let display = document.getElementById("display")
+
+       addEventListener ("keydown", svarfunk)
+       function svarfunk(event){
+           if (event.keyCode === 13){
+               calculator.display.value = eval(calculator.display.value)
+               calculator.display.value = calculator.display.value - value
+           }
+       }
+   </script>
+</html>
